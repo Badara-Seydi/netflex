@@ -48,6 +48,7 @@ const getMoviesDataset = async _ => {
                 release_date:movies[compteur].release_date,
             })
             compteur++;
+           
         } 
        
              

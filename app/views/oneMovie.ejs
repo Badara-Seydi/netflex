@@ -1,0 +1,35 @@
+<%- include ('partials/header') %>
+
+<h1 class="titre">Netflex</h1>
+
+<a href="/category">Categories</a>  <a href="/user/69">Last Viewers</a>
+
+
+<h2 class="affiche">Films à l'affiche</h2>
+
+<section class="navigation">
+    
+       
+
+        <div class="film">
+
+            <h3><%=moviesData.original_title%></h3>
+
+            <img src="https://image.tmdb.org/t/p/w500<%=moviesData.poster_path%>" alt="" srcset="">
+
+        <div class="displaynone">
+            <br>
+            <em>Release date :<%=moviesData.release_date%></em>
+
+            <p class="resume"><%=moviesData.overview%></p>
+            <p>Nombre de visionnages : <%=moviesData.popularity%></p>
+
+            <br></div>
+            
+            
+        </div>
+      
+    
+</section>
+
+<% include ('partials/footer') %>

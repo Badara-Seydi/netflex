@@ -3,8 +3,9 @@ const router = express.Router();
 
 const mainController= require('../controllers/mainController');
     // errorController,
-const categoryController=require('../controllers/categoryController')
-    // movieController,
+const categoryController=require('../controllers/categoryController');
+const movieController=require('../controllers/movieController');
+    // ,
     
 const userController=require('../controllers/userController')
 
@@ -22,7 +23,7 @@ router.get('/', mainController.homePage)
 //     .get('/movie/popular', movieController.getPopular)
 //     .get('/movie/lastest', movieController.getLastest)
 //     .get('/movie/bestrated', movieController.getBestRated)
-//     .get('/movie/:id', movieController.getMovieByID)
+     .get('/movie/:id', movieController.getMovieByID)
 //     .get('/movie/category/:id', movieController.getMovieByCategory)
      .get('/user/:id', userController.getInformations)
 //     .get('/user/:id/collection', userController.getCollection)
