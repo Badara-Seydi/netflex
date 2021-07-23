@@ -14,7 +14,7 @@ const KEY = process.env.API_KEY;
 
 const getAllCategories = async _ => {
 
-    const results = await axios('https://api.themoviedb.org/3/genre/movie/list?api_key=b79310e5c25643e20c05b842caaaee33&language=en-US')
+    const results = await axios(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.API_KEY}&language=en-US`)
     // .then (res=> res.json();
     const categories = results.data.genres;
     console.log(categories);
