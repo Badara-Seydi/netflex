@@ -1,0 +1,12 @@
+<%- include ('partials/header') %>
+
+<h2>Categories of films</h2>
+
+<div class="category">
+<% for( const categorie of categoriesData) { %>
+
+        <h4><%=categorie.label%></h4>
+<% } %>
+</div>
+
+<%- include ('partials/footer') %>
