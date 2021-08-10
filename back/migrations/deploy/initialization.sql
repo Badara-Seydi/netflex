@@ -24,30 +24,9 @@ CREATE TABLE "commentary"  (
 );
 
 
-CREATE TABLE "category"  (
-    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "label" TEXT NOT NULL ,
-    "movie_id" INT REFERENCES "movie"("id"),
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
-    "updated_at" TIMESTAMPTZ NOT NULL DEFAULT now()
-);
-
-
 CREATE TABLE "user_has_movies"(
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "movie_id" INT NOT NULL REFERENCES "movie"("id"),
-    "category_id"INT NOT NULL REFERENCES  "category"("id"),
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ NOT NULL DEFAULT now()
 );
-
-CREATE TABLE "movie_has_categories"(
-    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "user_id" INT NOT NULL REFERENCES "user"("id"),
-    "movie_id" INT NOT NULL REFERENCES "movie"("id"),
-    "category_id" INT NOT NULL REFERENCES "category"("id"),
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
-    "updated_at" TIMESTAMPTZ NOT NULL DEFAULT now()
-);
-
 COMMIT;

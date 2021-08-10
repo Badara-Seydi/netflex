@@ -1,12 +1,12 @@
-const express = require('expres');
+const express = require('express');
 const tokenController = require('../controllers/tokenController');
 
 
-exports.router = function(){
+exports.router = (function(){
     const apiRouter = express.Router();
 
     apiRouter.route('/users/register/').post(tokenController.register);
     apiRouter.route('/users/login/').post(tokenController.login);
-}
 
-module.exports = router;
+    return apiRouter;
+})();

@@ -5,9 +5,7 @@ const log = require('log-beautify');
 // const { Data } = require('phaser');
 const {
     User,
-    Movie,
-    Commentary,
-    Category
+    Commentary
 } = require('../app/models');
 
 const KEY = process.env.API_KEY;
@@ -20,9 +18,10 @@ const getAllCategories = async _ => {
     console.log(categories);
 
     for (const categorie of categories) {
-        await Category.create({
-            label:categorie.name,
-        })
+        (request, response) => {
+            res.send(categories)
+        }
+      
     };
     
 
@@ -86,7 +85,7 @@ const getMoviesDataset = async _ => {
 
 
 const createFakeUsers = async _ => {
- const user = 200;
+ const user = 5;
  for (let i=0 ;i<user ; i++) {
     const randomName = faker.name.firstName();
     const randomLastName = faker.name.lastName();
@@ -106,7 +105,7 @@ const createFakeUsers = async _ => {
 }
 
 const createFakeCommentary = async _ => {
-    const randomUser = Math.floor(Math.random() * (200 - 0 + 1)) + 1;
+    const randomUser = Math.floor(Math.random() * (5 - 0 + 1)) + 1;
     const random_movie = Math.floor(Math.random() * (20 - 0 + 1)) + 1;
 
     for (let index = 0; index < 150; index++) {

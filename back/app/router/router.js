@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const apiRouter = require('./apiRouter').router;
 
 const mainController= require('../controllers/mainController');
     // errorController,
@@ -11,7 +12,7 @@ const userController=require('../controllers/userController')
 
 
 
-
+router.use('/api',apiRouter)
 router.get('/', mainController.homePage)
     
 

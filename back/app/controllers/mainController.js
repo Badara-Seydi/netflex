@@ -23,6 +23,7 @@ const mainController = {
     newUser : (req,res,next)=>{
       User.create ({
         name : '',
+        email : ""
         
       })
       
