@@ -1,11 +1,11 @@
 
-// chercher un film
+// chercher un film 
 ###
 https://api.themoviedb.org/3/search/movie?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR&page=1&include_adult=false
 
-
-// route détail film
-https://api.themoviedb.org/3/movie/{movie}?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR
+###
+// route détail film par son ID
+https://api.themoviedb.org/3/movie/{movie_id}?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR
 
 
 // route actuellement au cinéma
@@ -29,7 +29,7 @@ https://api.themoviedb.org/3/movie/upcoming?api_key=b79310e5c25643e20c05b842caaa
 https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR&page=1
 
 
-// route film par catégories
+// route toutes les catégories
 ###
 https://api.themoviedb.org/3/genre/movie/list?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR
 
@@ -66,15 +66,15 @@ https://api.themoviedb.org/3/movie/{movie_id}/rating?api_key=b79310e5c25643e20c0
 https://api.themoviedb.org/3/account/{account_id}/rated/movies?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR&sort_by=created_at.asc&page=1
 
 
-//obtention d'un token temporaire pour valider la connexion d'un user
+//obtention d'un token temporaire pour valider la connexion d'un user 1er step
 ###
 https://api.themoviedb.org/3/authentication/token/new?api_key=b79310e5c25643e20c05b842caaaee33
 
-//demande d'authentification du user grace au token au dessus
+//demande d'authentification du user grace au token au dessus 2eme step
 ###
 https://www.themoviedb.org/authenticate/5d3537dd1cbfc8c191d6d9a5072275a7a7beb1ed?redirect_to={REDIRECTION_APRES_AUTH}
 
-//Création ID de session après validation Token
+//Création ID de session après validation Token 3eme step
 ###
 POST https://api.themoviedb.org/3/authentication/session/new?api_key=b79310e5c25643e20c05b842caaaee33
 
