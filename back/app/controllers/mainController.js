@@ -1,4 +1,4 @@
-const { Movie } = require('../models/');
+const { Movie, User } = require('../models/');
 
 const mainController = {
     homePage: (req, res, next) => {
@@ -20,8 +20,11 @@ const mainController = {
           });
     
 },
-    AboutAPI : (req,res,next)=>{
-
+    newUser : (req,res,next)=>{
+      User.create ({
+        name : '',
+        
+      })
       
 
     }

@@ -1,0 +1,88 @@
+
+// chercher un film
+###
+https://api.themoviedb.org/3/search/movie?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR&page=1&include_adult=false
+
+
+// route détail film
+https://api.themoviedb.org/3/movie/{movie}?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR
+
+
+// route actuellement au cinéma
+###
+https://api.themoviedb.org/3/movie/now_playing?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR&page=1
+
+
+
+// route mieux notés
+###
+https://api.themoviedb.org/3/movie/top_rated?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR&page=1
+
+
+// route bientôt au cinéma
+###
+https://api.themoviedb.org/3/movie/upcoming?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR&page=1
+
+
+// route film similaire
+###
+https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR&page=1
+
+
+// route film par catégories
+###
+https://api.themoviedb.org/3/genre/movie/list?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR
+
+
+// route ajouter aux favoris
+###
+https://api.themoviedb.org/3/account/{account_id}/favorite?api_key=b79310e5c25643e20c05b842caaaee33
+
+// route supprimer des favoris
+
+
+//route voir les favoris
+###
+https://api.themoviedb.org/3/account/{account_id}/favorite/movies?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR&sort_by=created_at.asc&page=1
+
+
+// route ajouter film à voir
+###
+https://api.themoviedb.org/3/account/{account_id}/watchlist?api_key=b79310e5c25643e20c05b842caaaee33
+
+
+// liste film à voir
+###
+https://api.themoviedb.org/3/account/{account_id}/watchlist/tv?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR&sort_by=created_at.asc&page=1
+
+
+// route poster un commentaire
+###
+https://api.themoviedb.org/3/movie/{movie_id}/rating?api_key=b79310e5c25643e20c05b842caaaee33
+
+
+// route films que j'ai noté
+###
+https://api.themoviedb.org/3/account/{account_id}/rated/movies?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR&sort_by=created_at.asc&page=1
+
+
+//obtention d'un token temporaire pour valider la connexion d'un user
+###
+https://api.themoviedb.org/3/authentication/token/new?api_key=b79310e5c25643e20c05b842caaaee33
+
+//demande d'authentification du user grace au token au dessus
+###
+https://www.themoviedb.org/authenticate/5d3537dd1cbfc8c191d6d9a5072275a7a7beb1ed?redirect_to={REDIRECTION_APRES_AUTH}
+
+//Création ID de session après validation Token
+###
+POST https://api.themoviedb.org/3/authentication/session/new?api_key=b79310e5c25643e20c05b842caaaee33
+
+//Se déconnecter de la session actuelle (Log-Out)
+###
+https://api.themoviedb.org/3/authentication/session?api_key=b79310e5c25643e20c05b842caaaee33
+
+
+//Obtention d'un token pour invité (user non connecté)
+###
+https://api.themoviedb.org/3/authentication/guest_session/new?api_key=b79310e5c25643e20c05b842caaaee33

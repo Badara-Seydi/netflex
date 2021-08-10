@@ -14,7 +14,7 @@ const KEY = process.env.API_KEY;
 
 const getAllCategories = async _ => {
 
-    const results = await axios(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.API_KEY}&language=en-US`)
+    const results = await axios(`https://api.themoviedb.org/3/genre/movie/list?api_key=${KEY}&language=fr-FR`)
     // .then (res=> res.json();
     const categories = results.data.genres;
     console.log(categories);
@@ -30,12 +30,12 @@ const getAllCategories = async _ => {
 }
 
 const getMoviesDataset = async _ => {
-    const results = await axios('https://api.themoviedb.org/3/discover/movie?api_key=b79310e5c25643e20c05b842caaaee33')
-    // https://api.themoviedb.org/3/discover/movie?api_key=b79310e5c25643e20c05b842caaaee33
-    // .then (res=> res.json())
+
+    try {
+        const results = await axios('https://api.themoviedb.org/3/discover/movie?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=free'); //faire les requetes par pages voulu , 15!
         const movies = results.data.results;
         console.log(movies);
-        let compteur =0;
+        let compteur =0; 
         for (const movie of movies) {
             
              await Movie.create({
@@ -49,15 +49,44 @@ const getMoviesDataset = async _ => {
             })
             compteur++;
            
-        } 
-       
-             
         }
+        
+    } catch (error) {
+        console.log('ca marche pas voici le probleme :'+error)
+    };
+
+    
+
+    // try {
+    //     const results = await axios('https://api.themoviedb.org/3/discover/movie?api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR&sort_by=popularity.desc&include_adult=false&include_video=false&page=3&with_watch_monetization_types=free');
+    //     const movies = results.data.results;
+    //     console.log(movies);
+    //     let compteur =0; 
+    //     for (const movie of movies) {
+            
+    //          await Movie.create({
+    //             original_title:movies[compteur].original_title,
+    //             category:movies[compteur].genre_ids,
+    //             overview:movies[compteur].overview,
+    //             backdrop_path:movies[compteur].backdrop_path,
+    //             poster_path:movies[compteur].poster_path,
+    //             popularity:movies[compteur].popularity,
+    //             release_date:movies[compteur].release_date,
+    //         })
+    //         compteur++;
+           
+    //     }
+        
+    // } catch (error) {
+    //     console.log('ca marche pas voici le probleme :'+error)
+    // }
+   }
+   
 
 
 
 const createFakeUsers = async _ => {
- const user = 500;
+ const user = 200;
  for (let i=0 ;i<user ; i++) {
     const randomName = faker.name.firstName();
     const randomLastName = faker.name.lastName();
@@ -77,7 +106,7 @@ const createFakeUsers = async _ => {
 }
 
 const createFakeCommentary = async _ => {
-    const randomUser = Math.floor(Math.random() * (500 - 0 + 1)) + 1;
+    const randomUser = Math.floor(Math.random() * (200 - 0 + 1)) + 1;
     const random_movie = Math.floor(Math.random() * (20 - 0 + 1)) + 1;
 
     for (let index = 0; index < 150; index++) {

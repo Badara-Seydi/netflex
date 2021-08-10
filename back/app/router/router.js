@@ -16,7 +16,7 @@ router.get('/', mainController.homePage)
     
 
 // .post('/login', mainController.aboutAPI)
-//     .post('/signup', mainController.aboutAPI)
+     .post('/signup', mainController.newUser)
      .get('/category', categoryController.getAll)
 //     .get('/category/:id/movie', categoryController.getMovies)
 //     .get('/movie/popular', movieController.getRandom)

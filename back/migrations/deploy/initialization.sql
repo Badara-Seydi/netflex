@@ -14,24 +14,10 @@ CREATE TABLE "user" (
     "updated_at" TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
-CREATE TABLE "movie"  (
-    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY ,
-    "original_title" TEXT NOT NULL,
-    "category" TEXT NOT NULL,
-    "overview" TEXT NOT NULL,
-    "backdrop_path" TEXT ,
-    "poster_path" TEXT ,
-    "popularity" TEXT ,
-    "release_date" TEXT ,
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
-    "updated_at" TIMESTAMPTZ NOT NULL DEFAULT now()
-);
-
 CREATE TABLE "commentary"  (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "content" TEXT NOT NULL,
     "user_id" INT NOT NULL REFERENCES "user"("id"),
-    "movie_id" INT REFERENCES "movie"("id"),
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ NOT NULL DEFAULT now()
 
