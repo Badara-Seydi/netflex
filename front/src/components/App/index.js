@@ -9,13 +9,15 @@ import {
 
 import Homepage from '../Homepage';
 import OneMovie from '../OneMovie';
-
+import OneCategory from '../OneCategory';
 function App() {
   return (
     <div>
     <Switch>
     <Route path="/" exact component={Homepage} />
     <Route path="/film/:id" component={OneMovie} />
+    <Route path="/categorie/:id" component={OneCategory} />
+
 
     </Switch>
     </div>

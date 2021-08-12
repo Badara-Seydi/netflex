@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import { withRouter } from 'react-router';
 
 import Header from '../Header';
 
@@ -11,9 +10,6 @@ class OneMovie extends React.Component {
     this.state = {
       id: this.props.match.params.id,
       movie: [],
-      title: this.props.match.params.title,
-      categories: [],
-
     };
   }
 

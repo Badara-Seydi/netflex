@@ -33,7 +33,7 @@ class UpcomingMovies extends React.Component {
                                 <img src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`} alt="affiche du film" />
                                 <h3>{movie.title}</h3>
                                 <p>Date de sortie : {movie.release_date}</p>
-                                <p>Note : {movie.vote_average}</p>
+                                <p>Note : {movie.vote_average} / 10</p>
                                 <p>Résumé : {movie.overview}</p>
                               </div>
                           </div></Link>

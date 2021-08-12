@@ -25,7 +25,7 @@ class Catégories extends React.Component {
                       this.state.categories.map(
                         (categorie) => (
                           <div key={categorie.id} className="grid-item">
-                            <Link to={`/${categorie.name}`}>
+                            <Link to={`/categorie/${categorie.id}`}>
                               <h3>{categorie.name}</h3>
                             </Link>
 
