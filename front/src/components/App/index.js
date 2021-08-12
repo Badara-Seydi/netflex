@@ -1,17 +1,25 @@
-// == Import npm
-import React from 'react';
+import React, { useState } from 'react';
+import 'regenerator-runtime/runtime';
 
-// == Import
-import reactLogo from './react-logo.svg';
-import './styles.css';
+import {
+  Route,
+  Router,
+  Switch,
+} from 'react-router-dom';
 
-// == Composant
-const App = () => (
-  <div className="app">
-    <img src={reactLogo} alt="react logo" />
-    <h1>Composant : App</h1>
-  </div>
-);
+import Homepage from '../Homepage';
+import OneMovie from '../OneMovie';
 
-// == Export
+function App() {
+  return (
+    <div>
+    <Switch>
+    <Route path="/" exact component={Homepage} />
+    <Route path="/film/:id" component={OneMovie} />
+
+    </Switch>
+    </div>
+  );
+}
+
 export default App;
