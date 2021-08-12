@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+
 class Catégories extends React.Component {
       state = {
         categories: [],
@@ -14,11 +15,11 @@ class Catégories extends React.Component {
           console.log(this.setState);
         });
       }
-
+        
+        
       render() {
         const data = this.state;
         console.log(data);
-
         return (
           <div className="categories">
             {
@@ -26,7 +27,7 @@ class Catégories extends React.Component {
                         (categorie) => (
                           <div key={categorie.id} className="grid-item">
                             <Link to={`/categorie/${categorie.id}`}>
-                              <h3>{categorie.name}</h3>
+                              <button type="button" onClick="window.location.reload()">{categorie.name} </button>
                             </Link>
 
                           </div>
