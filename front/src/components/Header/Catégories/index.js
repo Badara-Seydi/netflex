@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import './style.css';
 
 class Catégories extends React.Component {
       state = {
@@ -27,7 +28,7 @@ class Catégories extends React.Component {
                         (categorie) => (
                           <div key={categorie.id} className="grid-item">
                             <Link to={`/categorie/${categorie.id}`}>
-                              <button type="button" onClick="window.location.reload()">{categorie.name} </button>
+                              <button className="scanfcode" type="button" onClick="window.location.reload()">{categorie.name} </button>
                             </Link>
 
                           </div>
