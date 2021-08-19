@@ -17,7 +17,7 @@ class OneCategory extends React.Component {
   async componentDidMount() {
     try { // Simple GET request using axios
       const response = await axios.get(`http://api.themoviedb.org/3/discover/movie?api_key=b79310e5c25643e20c05b842caaaee33&with_genres=${this.props.match.params.id}&language=fr-FR`);
-      this.setState({ categorie: response.data.results});
+      this.setState({ categorie: response.data.results });
       console.log(response);
     }
     catch (error) {
@@ -29,26 +29,38 @@ class OneCategory extends React.Component {
     const data = this.state;
     console.log(data);
     return (
-      <div className="one-category">
+      <div>
         <Header />
-        <h2 className="sous-titre" />
-        {
+
+        <div className="one-category">
+          <h2 className="sous-titre" />
+          {
                   this.state.categorie.map(
                     (categorie) => (
-                      <Link to={`/film/${categorie.id}`}>
-                        <div className="one-movie">
-                          <div key={categorie.id} className="grid-item">
-                            <img src={`https://image.tmdb.org/t/p/w185/${categorie.poster_path}`} />
-                            <h3>{categorie.title}</h3>
-                            <p>Date de sortie : {categorie.release_date}</p>
-                            <p>Note : {categorie.vote_average} / 10</p>
-                            <p>Résumé : {categorie.overview}</p>
+                      <div>
+                        <div className="scene">
+                          <div className="card">
+                            <div className="card__face card__face--front">
+                              <Link to={`/film/${categorie.id}`}>
+                                <img src={`https://image.tmdb.org/t/p/w185/${categorie.poster_path}`} />
+                              </Link>
+                            </div>
+
+                            <div className="card__face card__face--back">
+                              <Link to={`/film/${categorie.id}`}>
+                                <h3 className="movie-title">{categorie.title}</h3>
+                                <p className="release-date">Date de sortie : {categorie.release_date}</p>
+                                <p className="average">Note : {categorie.vote_average} / 10</p>
+                                <p className="story">Résumé : {categorie.overview}</p>
+                              </Link>
+                            </div>
                           </div>
                         </div>
-                      </Link>
+                      </div>
                     ),
                   )
               }
+        </div>
       </div>
     );
   }

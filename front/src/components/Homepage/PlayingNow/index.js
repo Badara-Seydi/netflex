@@ -12,35 +12,50 @@ class PlayingNow extends React.Component {
           const moviesResponse = response.data.results;
           this.setState({ movies: moviesResponse });
           console.log(this.setState);
-
         });
       }
- 
+
       render() {
         const data = this.state;
         console.log(data);
 
         return (
-          <div className="playing-now">
-          <h2 className="sous-titre">Actuellement au cinéma</h2>
-            {
-                      this.state.movies.map(
-                        (movie) => (
-                          <Link to={`/film/${movie.id}`}>
 
-                          <div className="one-movie">
-                              <div key={movie.id} className="grid-item">
-                                <img src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`} />
-                                <h3>{movie.title}</h3>
-                                <p>Date de sortie : {movie.release_date}</p>
-                                <p>Note : {movie.vote_average} / 10</p>
-                                <p>Résumé : {movie.overview}</p>
-                              </div>
-                          </div></Link>
-                        ),
-                      )
-                  }
+          <div className="playing-now">
+            <h2 className="sous-titre">Nouveauté</h2>
+
+            {
+              this.state.movies.map(
+                (movie) => (
+                  <div>
+                    <div className="scene">
+                      <div className="card">
+                        <div className="card__face card__face--front">
+
+                          <Link to={`/film/${movie.id}`}>
+                            <img src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`} />
+                          </Link>
+                        </div>
+
+                        <div className="card__face card__face--back">
+                        <Link to={`/film/${movie.id}`}>
+
+                          <h3 className="movie-title">{movie.title}</h3>
+                          <p className="release-date">Date de sortie : {movie.release_date}</p>
+                          <p className="average">Note : {movie.vote_average} / 10</p>
+                          <p className="story">Résumé : {movie.overview}</p>
+                          </Link>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                ),
+              )
+          }
           </div>
+
         );
       }
 }

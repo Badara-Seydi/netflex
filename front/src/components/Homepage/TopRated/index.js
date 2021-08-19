@@ -23,23 +23,36 @@ class TopRated extends React.Component {
         return (
           <div className="top-rated">
           <h2 className="sous-titre">Films les mieux notés</h2>
-            {
-                      this.state.movies.map(
-                        (movie) => (
-                          <Link to={`/film/${movie.id}`}>
+          {
+            this.state.movies.map(
+              (movie) => (
+                <div>
+                  <div className="scene">
+                    <div className="card">
+                      <div className="card__face card__face--front">
 
-                          <div className="one-movie">
-                              <div key={movie.id} className="grid-item">
-                                <img src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`} />
-                                <h3>{movie.title}</h3>
-                                <p>Date de sortie : {movie.release_date}</p>
-                                <p>Note : {movie.vote_average} / 10</p>
-                                <p>Résumé : {movie.overview}</p>
-                              </div>
-                          </div></Link>
-                        ),
-                      )
-                  }
+                        <Link to={`/film/${movie.id}`}>
+                          <img src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`} />
+                        </Link>
+                      </div>
+
+                      <div className="card__face card__face--back">
+                      <Link to={`/film/${movie.id}`}>
+
+                        <h3 className="movie-title">{movie.title}</h3>
+                        <p className="release-date">Date de sortie : {movie.release_date}</p>
+                        <p className="average">Note : {movie.vote_average} / 10</p>
+                        <p className="story">Résumé : {movie.overview}</p>
+                        </Link>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              ),
+            )
+        }
           </div>
         );
       }
