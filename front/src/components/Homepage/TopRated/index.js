@@ -12,18 +12,63 @@ class TopRated extends React.Component {
           const moviesResponse = response.data.results;
           this.setState({ movies: moviesResponse });
           console.log(this.setState);
-
         });
       }
- 
+
       render() {
         const data = this.state;
         console.log(data);
 
         return (
           <div className="top-rated">
-          <h2 className="sous-titre">Films les mieux notés</h2>
-          {
+            <div className="sous-title">
+              <ul>
+                <div className="div-sous-title">
+                  <li><span className="p-sous-title">F</span>
+                  </li>
+                  <li><span className="p-sous-title">i</span>
+                  </li>
+                  <li><span className="p-sous-title">l</span>
+                  </li>
+                  <li><span className="p-sous-title">m</span>
+                  </li>
+                  <li><span className="p-sous-title">s </span>
+                  </li>
+                </div>
+                <div className="div-sous-title">
+                  <li><span className="p-sous-title">L</span>
+                  </li>
+                  <li><span className="p-sous-title">e</span>
+                  </li>
+                  <li><span className="p-sous-title">s</span>
+                  </li>
+                </div>
+                <div className="div-sous-title">
+                  <li><span className="p-sous-title">M</span>
+                  </li>
+                  <li><span className="p-sous-title">i</span>
+                  </li>
+                  <li><span className="p-sous-title">e</span>
+                  </li>
+                  <li><span className="p-sous-title">u</span>
+                  </li>
+                  <li><span className="p-sous-title">x</span>
+                  </li>
+                </div>
+                <div className="div-sous-title">
+                  <li><span className="p-sous-title">N</span>
+                  </li>
+                  <li><span className="p-sous-title">o</span>
+                  </li>
+                  <li><span className="p-sous-title">t</span>
+                  </li>
+                  <li><span className="p-sous-title">é</span>
+                  </li>
+                  <li><span className="p-sous-title">s</span>
+                  </li>
+                </div>
+              </ul>
+            </div>          {
             this.state.movies.map(
               (movie) => (
                 <div>
@@ -37,12 +82,12 @@ class TopRated extends React.Component {
                       </div>
 
                       <div className="card__face card__face--back">
-                      <Link to={`/film/${movie.id}`}>
+                        <Link to={`/film/${movie.id}`}>
 
-                        <h3 className="movie-title">{movie.title}</h3>
-                        <p className="release-date">Date de sortie : {movie.release_date}</p>
-                        <p className="average">Note : {movie.vote_average} / 10</p>
-                        <p className="story">Résumé : {movie.overview}</p>
+                          <h3 className="movie-title">{movie.title}</h3>
+                          <p className="release-date">Date de sortie : {movie.release_date}</p>
+                          <p className="average">Note : {movie.vote_average} / 10</p>
+                          <p className="story">Résumé : {movie.overview}</p>
                         </Link>
 
                       </div>

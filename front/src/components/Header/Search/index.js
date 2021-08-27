@@ -33,14 +33,17 @@ class Search extends Component {
 
   render() {
     return (
+      <div className="search">
+
       <form>
         <input
-          placeholder="Search for..."
+          placeholder="Chercher un film..."
+          className="search-input"
           ref={(input) => this.search = input}
           onChange={this.handleInputChange}
         />
         <Suggestions results={this.state.results} />
-      </form>
+      </form></div>
     );
   }
 }

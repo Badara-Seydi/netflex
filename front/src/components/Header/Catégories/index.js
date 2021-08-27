@@ -2,8 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import './style.css';
-
 class Catégories extends React.Component {
       state = {
         categories: [],
@@ -22,20 +20,20 @@ class Catégories extends React.Component {
         const data = this.state;
         console.log(data);
         return (
-          <div className="categories">
+          <div className="categories"><ul>
             {
                       this.state.categories.map(
                         (categorie) => (
-                          <div key={categorie.id} className="grid-item">
+                          <div key={categorie.id}>
                             <Link to={`/categorie/${categorie.id}`}>
-                              <button className="scanfcode" type="button" onClick="window.location.reload()">{categorie.name} </button>
+                              <li onClick="window.location.reload()"><span className="p-categories">{categorie.name}</span></li>
                             </Link>
 
                           </div>
 
                         ),
                       )
-                  }
+                  }</ul>
           </div>
         );
       }

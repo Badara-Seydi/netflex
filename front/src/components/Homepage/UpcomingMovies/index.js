@@ -21,7 +21,37 @@ class UpcomingMovies extends React.Component {
 
         return (
           <div className="upcoming-movies">
-            <h2 className="sous-titre">Prochaines sorties</h2>
+            <div className="sous-title">
+              <ul>
+                <li><span className="p-sous-title">P</span>
+                </li>
+                <li><span className="p-sous-title">r</span>
+                </li>
+                <li><span className="p-sous-title">o</span>
+                </li>
+                <li><span className="p-sous-title">c</span>
+                </li>
+                <li><span className="p-sous-title">h</span>
+                </li>
+                <li><span className="p-sous-title">a</span>
+                </li>
+                <li><span className="p-sous-title">i</span>
+                </li>
+                <li><span className="p-sous-title">n</span>
+                </li>
+                <li><span className="p-sous-title">e</span>
+                </li>
+                <li><span className="p-sous-title">m</span>
+                </li>
+                <li><span className="p-sous-title">e</span>
+                </li>
+                <li><span className="p-sous-title">n</span>
+                </li>
+                <li><span className="p-sous-title">t</span>
+                </li>
+              </ul>
+            </div>
+
             {
             this.state.movies.map(
               (movie) => (

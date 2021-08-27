@@ -22,7 +22,30 @@ class PlayingNow extends React.Component {
         return (
 
           <div className="playing-now">
-            <h2 className="sous-titre">Nouveauté</h2>
+            <div className="sous-title">
+              <ul>
+                <li><span className="p-sous-title">N</span>
+                </li>
+                <li><span className="p-sous-title">o</span>
+                </li>
+                <li><span className="p-sous-title">u</span>
+                </li>
+                <li><span className="p-sous-title">v</span>
+                </li>
+                <li><span className="p-sous-title">e</span>
+                </li>
+                <li><span className="p-sous-title">a</span>
+                </li>
+                <li><span className="p-sous-title">u</span>
+                </li>
+                <li><span className="p-sous-title">t</span>
+                </li>
+                <li><span className="p-sous-title">é</span>
+                </li>
+                <li><span className="p-sous-title">s</span>
+                </li>
+              </ul>
+            </div>
 
             {
               this.state.movies.map(
@@ -38,12 +61,12 @@ class PlayingNow extends React.Component {
                         </div>
 
                         <div className="card__face card__face--back">
-                        <Link to={`/film/${movie.id}`}>
+                          <Link to={`/film/${movie.id}`}>
 
-                          <h3 className="movie-title">{movie.title}</h3>
-                          <p className="release-date">Date de sortie : {movie.release_date}</p>
-                          <p className="average">Note : {movie.vote_average} / 10</p>
-                          <p className="story">Résumé : {movie.overview}</p>
+                            <h3 className="movie-title">{movie.title}</h3>
+                            <p className="release-date">Date de sortie : {movie.release_date}</p>
+                            <p className="average">Note : {movie.vote_average} / 10</p>
+                            <p className="story">Résumé : {movie.overview}</p>
                           </Link>
 
                         </div>

@@ -12,9 +12,9 @@ import Header from '../Header';
 const Homepage = () => (
   <div className="app">
   <Header />
-  <PlayingNow />
-  <TopRated />
-  <UpcomingMovies />
+<PlayingNow />
+<TopRated />
+<UpcomingMovies />
   </div>
 );
 
