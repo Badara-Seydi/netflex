@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+body {
+  background: #18191f;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+
+}
+
+.header {
+  height: 25vh;
+}
+
+// TITLE
+
+.title {
+  padding: 100;
+  margin: 0; 
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style: none;
+}
+
+label {
+  position: relative;
+}
+
+span {
+  z-index: 100;
+  color: white;
+}
+
+.p-title{
+  font-size: 3rem;
+  margin-inline: 1rem;
+  cursor: pointer;
+}
+
+// SEARCH
+.search {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-input{
+  font-size: 2vh;
+  padding-inline: 1vw;
+  padding-block: 0.5vh;
+  font-style: italic;
+}
+
+
+
+// CATEGORIES
+
+.categories {
+  height: 10vh; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.p-categories{
+font-size: 1.1rem;
+margin-inline: 1rem;
+cursor: pointer;
+
+}
+
+span:hover {
+  color: yellow;
+  text-shadow: 0 0 15px yellow, 0 0 25px yellow;
+  animation: glow 1.5s linear infinite;
+}
+
+@keyframes glow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+// SOUS TITLE
+.sous-title {
+  width: 100vw;
+  height: 5vh;
+  margin-left: 5%;
+}
+.p-sous-title{
+  font-size: 1.5rem;
+}
