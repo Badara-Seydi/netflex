@@ -1,3 +1,4 @@
+const { request } = require('http');
 const { Movie, User } = require('../models/');
 
 const mainController = {
@@ -20,15 +21,7 @@ const mainController = {
           });
     
 },
-    newUser : (req,res,next)=>{
-      User.create ({
-        name : '',
-        email : ""
-        
-      })
-      
 
-    }
 }
 
 

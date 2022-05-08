@@ -1,4 +1,4 @@
-const { Movie, Category } = require('../models/');
+const { Movie, Category, User } = require('../models/');
 
 const movieController = {
     homePage: (req, res, next) => {
@@ -41,6 +41,28 @@ const movieController = {
           });
 
     },
+
+    search: async (request, response) => {
+      try {
+        const search = request.params.search;
+        console.log(request.params.search)
+        const movie = await Movie.findAll({
+          include: {
+            all: true
+          },
+          where: {
+            name: {
+  
+              [Op.iLike]: `%${search}%`
+            },
+          }
+        });
+        response.json(movie);
+      } catch (error) {
+        console.log(error)
+      }
+    },
+
     
 }
 

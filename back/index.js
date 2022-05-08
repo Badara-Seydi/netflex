@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 //Imports
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -15,7 +17,6 @@ app.use(bodyParser.json());
 const monrouter = require('./app/router/router');
 const { Server } = require('http');
 app.use(monrouter);
-require('dotenv').config();
 const PORT =  process.env.PORT || 3500 ;
 app.use(express.static('public'));
 

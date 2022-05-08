@@ -2,7 +2,7 @@
 
 BEGIN;
 
-DROP TABLE "user","commentary","user_has_movies";
+DROP TABLE "user","commentary";
 
 
 COMMIT;

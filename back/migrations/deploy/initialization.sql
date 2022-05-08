@@ -4,12 +4,14 @@ BEGIN;
 
 CREATE TABLE "user" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "lastname" TEXT NOT NULL,
-    "firstname" TEXT NOT NULL,
+    "role" INTEGER NOT NULL DEFAULT 2,
+    "lastname" TEXT,
+    "name" TEXT,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
-    "profil_photo_url" TEXT NOT NULL,
-    "description" TEXT NOT NULL,
+    "profil_photo_url" TEXT,
+    "description" TEXT,
+    "bookmarks" INTEGER,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ NOT NULL DEFAULT now()
 );
@@ -24,9 +26,4 @@ CREATE TABLE "commentary"  (
 );
 
 
-CREATE TABLE "user_has_movies"(
-    "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
-    "updated_at" TIMESTAMPTZ NOT NULL DEFAULT now()
-);
 COMMIT;
