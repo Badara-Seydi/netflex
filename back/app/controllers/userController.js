@@ -4,6 +4,7 @@ const {
 const bcrypt = require('bcrypt');
 const {Op} = require('sequelize');
 const {jwt} = require('../utils');
+const userSchema = require("../validationSchema/userSchema");
 
 const userController = {
 
@@ -22,7 +23,7 @@ const userController = {
       const user = await User.findOne({
         where: {
           [Op.or]: {
-            name: {
+            pseudo: {
               [Op.iLike]: login,
             },
             email: {
@@ -53,7 +54,7 @@ const userController = {
           ...userData,
           accessToken,
           refreshToken,
-          "message": "Bienvenue " + request.body.name+" Votre compte a été créer!"
+          "message": "Bienvenue sur votre espace personnel " + userData.pseudo
         });
       
 
@@ -66,17 +67,29 @@ const userController = {
   },
 
   signUp: async (request, response) => {
-try {
+
   const salt = await bcrypt.genSalt(10);
   const encryptedPassword = await bcrypt.hash(request.body.password, salt);
+try{
+  const {
+    name,
+    email,
+    pseudo,
+    lastname,
+    password,
+    profil_photo_url,
+    description
+  } = request.body;
+  const result = await userSchema.validateAsync(request.body);
 
   const newUser =  await User.create({
-      name: request.body.name,
-      email: request.body.email,
-      lastname: request.body.lastname,
+      name:name,
+      email:email,
+      pseudo:pseudo,
+      lastname:lastname,
       password: encryptedPassword,
-      profil_photo_url: request.body.profil_photo_url,
-      description: request.body.description,
+      profil_photo_url:profil_photo_url,
+      description:description
       
     });
   
@@ -84,16 +97,12 @@ try {
 
       const userData = newUser.toJSON();
       console.log(userData)
-      const accessToken = jwt.generateAccessToken(userData);
-      const refreshToken = jwt.generateRefreshToken(userData);
       console.log(request.headers.authorization)
 
       
         return response.status(200).json({
           ...userData,
-          accessToken,
-          refreshToken,
-          "message": "Bienvenue " + request.body.name+" Votre compte a été créer!"
+          "message": "Bienvenue " + userData.pseudo+" Votre compte a été créer!"
         });
       }
 
@@ -128,9 +137,8 @@ try {
         });
       }
 
-      return response.json({
-        user
-      })
+        return response.json({user})
+      
     } catch (error) {
       console.error(error);
       return res.status(500).send({
@@ -171,16 +179,20 @@ try {
   deleteOne: async (request, response) => {
     try {
       const userToDelete = await User.findByPk(request.params.id);
-      console.log(userToDelete);
       if (!userToDelete) {
         return response.status(404).json({
           "message": "user Not Found !"
         });
       }
+
+      // if(request.params.id!=token){
+      //   return response.status(500).json({"error":"vous ne pouvez supprimer que votre compte personnel"});
+      // }
       await userToDelete.destroy()
       return response.json({
         "message": "Votre compte a bien été supprimé"
       })
+  
     } catch (error) {
       console.error(error);
       return res.status(500).send({

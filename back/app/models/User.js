@@ -4,19 +4,19 @@ const { DataTypes, Model } = require('sequelize');
 class User extends Model { }
 
 User.init({
-  name: {
-    type: DataTypes.TEXT,
-    allowNull:true
-  },
-  lastname: {
-    type: DataTypes.TEXT,
-    allowNull:true
-  },
   email: {
+    type: DataTypes.TEXT,
+    allowNull:true
+  },
+  password: {
+    type: DataTypes.TEXT,
+    allowNull:true
+  },
+  pseudo: {
     type: DataTypes.TEXT,
     allowNull: true
   },
-  password: {
+  description: {
     type: DataTypes.TEXT,
     allowNull:true
   },
@@ -24,10 +24,14 @@ User.init({
     type: DataTypes.TEXT,
     allowNull:true
   },
-  description: {
+  role_id: {
     type: DataTypes.TEXT,
     allowNull:true
   },
+  bookmarks:{
+    type: DataTypes.STRING,
+    allowNull:true
+  }
 }, {
   sequelize,
   tableName: 'user'

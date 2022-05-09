@@ -12,6 +12,41 @@ body {
   height: 25vh;
 }
 
+//Connect
+.connection{
+  margin-top: 2%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.connect{
+  width: 10%;
+  height: 3vh;
+  margin-top: 1%;
+  margin-right: 2%;
+  display: none;
+  
+}
+
+.user_logo {
+  width: 5%;
+  height: 7vh;
+  margin-left: 65%;
+  background-color: white;
+  border-radius: 50%;
+  color: white;
+
+}
+#btn-connect{
+  width: fit-content;
+  align-items: center;
+  margin: auto;
+}
+.user_logo:hover{
+  background-color: crimson;
+  transition: ease-in-out 3s ;
+
+}
 // TITLE
 
 .title {

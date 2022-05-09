@@ -4,14 +4,13 @@ BEGIN;
 
 CREATE TABLE "user" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "role" INTEGER NOT NULL DEFAULT 2,
-    "lastname" TEXT,
-    "name" TEXT,
-    "email" TEXT NOT NULL,
+    "role_id" INTEGER NOT NULL DEFAULT 2,
+    "pseudo" TEXT NOT NULL UNIQUE,
+    "email" TEXT NOT NULL UNIQUE,
     "password" TEXT NOT NULL,
     "profil_photo_url" TEXT,
     "description" TEXT,
-    "bookmarks" INTEGER,
+    "bookmarks"  TEXT,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ NOT NULL DEFAULT now()
 );

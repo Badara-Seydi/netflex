@@ -23,7 +23,7 @@ router.get('/', mainController.homePage)
     .get('/allusers', userController.getAll)
     .get('/user/:id', userController.getOne)
     .post('/user/:id',tokenMiddleware.authenticate, userController.updateOne)
-    .delete('/user/:id',tokenMiddleware.authenticate,tokenMiddleware. userController.deleteOne)
+    .delete('/user/:id',tokenMiddleware.authenticate, userController.deleteOne)
     .get('/category', categoryController.getAll)
 
     //User's Movies

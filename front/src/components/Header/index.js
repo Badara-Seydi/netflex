@@ -4,6 +4,8 @@ import Catégories from './Catégories';
 import Search from './Search';
 import Title from './Title';
 import './style.scss';
+import user from './User/user';
+import User from './User/user';
 
 
 // == Import
@@ -11,6 +13,7 @@ import './style.scss';
 // == Composant
 const Header = () => (
   <div className="header">
+<User/>
 <Title /> 
 <Search />
 <Catégories />
