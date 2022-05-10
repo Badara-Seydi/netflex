@@ -1,3 +1,4 @@
 .env
 sqitch.conf
 sqitch plan
+node_modules

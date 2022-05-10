@@ -32,7 +32,16 @@ User.init({
     type: DataTypes.STRING,
     allowNull:true
   }
-}, {
+//   createdAt:{
+//     type: DataTypes.STRING,
+//     allowNull:true
+//   },
+//   updatedAt:{
+//     type:DataTypes.STRING,
+//     allowNull:true
+// }
+},
+ {
   sequelize,
   tableName: 'user'
 });

@@ -72,10 +72,8 @@ const userController = {
   const encryptedPassword = await bcrypt.hash(request.body.password, salt);
 try{
   const {
-    name,
     email,
     pseudo,
-    lastname,
     password,
     profil_photo_url,
     description
@@ -83,14 +81,11 @@ try{
   const result = await userSchema.validateAsync(request.body);
 
   const newUser =  await User.create({
-      name:name,
       email:email,
       pseudo:pseudo,
-      lastname:lastname,
       password: encryptedPassword,
       profil_photo_url:profil_photo_url,
       description:description
-      
     });
   
     if (newUser) {
