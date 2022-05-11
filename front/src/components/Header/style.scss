@@ -11,7 +11,10 @@ body {
 .header {
   height: 25vh;
 }
-
+.form-header{
+  height: 25vh;
+  width: 50%;
+}
 //Connect
 .connection{
   margin-top: 2%;
@@ -20,7 +23,7 @@ body {
   justify-content: space-around;
 }
 .connect{
-  width: 10%;
+  width: 60%;
   height: 3vh;
   margin-top: 1%;
   margin-right: 2%;

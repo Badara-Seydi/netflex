@@ -10,7 +10,9 @@ const userController = {
 
   login: async (request, response) => {
     try {
+      console.log(request.body)
       const {
+
         login,
         password
       } = request.body;

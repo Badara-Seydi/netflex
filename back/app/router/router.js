@@ -13,7 +13,7 @@ const {tokenMiddleware}= require('../middlewares')
 
 
 
-router.use('/api', apiRouter)
+// router.use('/api', apiRouter)
 router.get('/', mainController.homePage)
 
     //User
