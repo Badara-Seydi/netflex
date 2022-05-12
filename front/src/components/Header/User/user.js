@@ -4,21 +4,33 @@ import image from '../../../../public/image/connecting.png';
 const url="http://localhost:8081/login";
 const headers= {
   'Content-Type': 'application/json'
-}
+};
 
 const  User = ()=> {
   const [connect, setConnect] = useState(true);
   const [login, setLogin] = useState('');
   const[password, setPassword] = useState('');
+  const [token,setToken]=useState('');
+  const [welcome,setWelcome]=useState('');
+  
+
 
 const  handleSubmit = async (e) => {
   e.preventDefault();
-  const data = {login,password}
-console.log(data);
+  const data = {login,password};
 axios
 .post(url,data)
-.then(function (response) {console.log(response.data)})
+.then(function (response) {setToken(response.data.accessToken)
+  if(response){ 
+  setWelcome('Bienvenue sur Netflex  '+response.data.pseudo);
+  setConnect(false);
+}},console.log(token)
+)
+
+.catch(function (error) {console.log(error)});
 }
+
+
 
 // const postData = async () => {
 // console.log('postData');
@@ -31,6 +43,7 @@ axios
       <img className="user_logo" onClick={() => setConnect((s) => !s)} src={image} alt="" srcSet="" />
       <input className="connect" id="login" style={{ display: connect ? 'none' : 'flex' }} type="text" placeholder="email ou pseudo" value={login} onChange={(e)=>{setLogin(e.target.value)}} /><input className="connect" id="password" value={password}  onChange={(e)=>{setPassword(e.target.value)}} style={{ display: connect ? 'none' : 'flex' }} type="password" name="password" />
       <button className="connect" id="btn-connect" type='submit' style={{ display: connect ? 'none' : 'flex' }}>Connexion</button>
+      <p id='welcome' className='welcome'>{welcome} </p>
       </form>
     </div>
   );

@@ -12,7 +12,7 @@ body {
   height: 25vh;
 }
 .form{
-  height: 25vh;
+  height: 10vh;
   width: 80%;
 }
 //Connect
@@ -23,14 +23,21 @@ body {
   justify-content: space-around;
 }
 .connect{
-  width: 60%;
+  width: 12%;
   height: 3vh;
   margin-top: 1%;
-  margin-right: 2%;
+  margin-left: auto;
+  position: relative;
   display: none;
   
 }
-
+.welcome{
+  color: white;
+  margin:auto;
+  font-size: large;
+  font-weight: bold;
+  border: solid 2px red;
+}
 .user_logo {
   width: 5%;
   height: 7vh;
@@ -43,7 +50,10 @@ body {
 #btn-connect{
   width: fit-content;
   align-items: center;
-  margin: auto;
+  margin-left: auto;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
 }
 .user_logo:hover{
   background-color: crimson;
