@@ -4,7 +4,6 @@ import Catégories from './Catégories';
 import Search from './Search';
 import Title from './Title';
 import './style.scss';
-import user from './User/user';
 import User from './User/user';
 
 

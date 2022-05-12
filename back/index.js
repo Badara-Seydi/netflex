@@ -7,10 +7,7 @@ const cors = require('cors');
 
 //Instantiate server
 const app = express();
-
 const router = express.Router()
-
-
 
 //bodyParser config
 app.use(bodyParser.urlencoded({extended:true}));

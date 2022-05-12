@@ -17,7 +17,7 @@ const {tokenMiddleware}= require('../middlewares')
 router.get('/', mainController.homePage)
 
     //User
-    .get('/login',userController.login)
+    .post('/login',userController.login)
     .get('/logout', userController.logout)
     .post('/signup', userController.signUp)
     .get('/allusers', userController.getAll)
