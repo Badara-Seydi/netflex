@@ -10,6 +10,9 @@ import {
 import Homepage from '../Homepage';
 import OneMovie from '../OneMovie';
 import OneCategory from '../OneCategory';
+import Signup from '../Signup/signup';
+
+
 function App() {
   return (
     <div>
@@ -17,7 +20,7 @@ function App() {
     <Route path="/" exact component={Homepage} />
     <Route path="/film/:id" component={OneMovie} />
     <Route path="/categorie/:id" component={OneCategory} />
-
+    <Route path="/signup" component={Signup} />
 
     </Switch>
     </div>

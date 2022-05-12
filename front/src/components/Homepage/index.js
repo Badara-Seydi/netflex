@@ -7,6 +7,7 @@ import PlayingNow from './PlayingNow';
 import TopRated from './TopRated';
 import UpcomingMovies from './UpcomingMovies';
 import Header from '../Header';
+import Signup from '../Signup/signup';
 
 // == Composant
 const Homepage = () => (
