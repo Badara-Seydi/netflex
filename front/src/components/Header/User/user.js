@@ -2,10 +2,9 @@ import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import image from '../../../../public/image/connecting.png';
 import { Link } from 'react-router-dom';
+import './user.css';
 const url="http://localhost:8081/login";
-const headers= {
-  'Content-Type': 'application/json'
-};
+
 
 const  User = ()=> {
   const [connect, setConnect] = useState(true);
@@ -40,10 +39,10 @@ axios
 
   return (
     <div className="connection">
-      <form class="form" onSubmit={handleSubmit}>
-      <img className="user_logo" onClick={() => setConnect((s) => !s)} src={image} alt="" srcSet="" />< Link to={'/signup'} >S'inscrire </Link>
+      <form class="form-login" onSubmit={handleSubmit}>
+      <img className="user_logo" onClick={() => setConnect((s) => !s)} src={image} alt="" srcSet="" />< Link to={'/signup'} className='signup-link'>S'inscrire </Link>
       <input className="connect" id="login" style={{ display: connect ? 'none' : 'flex' }} type="text" placeholder="email ou pseudo" value={login} onChange={(e)=>{setLogin(e.target.value)}} /><input className="connect" id="password" value={password}  onChange={(e)=>{setPassword(e.target.value)}} style={{ display: connect ? 'none' : 'flex' }} type="password" name="password" />
-      <button className="connect" id="btn-connect" type='submit' style={{ display: connect ? 'none' : 'flex' }}>Connexion</button>
+      <button className="connect-login" id="btn-connect" type='submit' style={{ display: connect ? 'none' : 'flex' }}>Connexion</button>
       <p id='welcome' className='welcome'>{welcome} </p>
       </form>
       

@@ -1,1 +1,36 @@
 
+.connection{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 70%;
+    margin-bottom: 2%;
+    padding: 0%;
+    margin-left:20%;
+}
+
+.form-login{
+    height: 12vh;
+    width: 100%;
+    margin-right: 5%;
+    margin-top: 0%
+
+  }
+
+  .user_logo{
+
+      padding : 0%;
+     width: 5%;
+        height: 7vh;
+        margin-left: 90%;
+        background-color: white;
+        border-radius: 50%;
+        color: white;
+  }
+.signup-link{
+    width: 7%;
+    padding : 0%;
+    border: solid 2px red;
+    margin-left:85%
+
+}

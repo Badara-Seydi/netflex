@@ -72,6 +72,9 @@ const userController = {
 
   const salt = await bcrypt.genSalt(10);
   const encryptedPassword = await bcrypt.hash(request.body.password, salt);
+
+  
+  
 try{
   const {
     email,
@@ -82,6 +85,8 @@ try{
   } = request.body;
   const result = await userSchema.validateAsync(request.body);
 
+  
+
   const newUser =  await User.create({
       email:email,
       pseudo:pseudo,
@@ -89,6 +94,17 @@ try{
       profil_photo_url:profil_photo_url,
       description:description
     });
+if(newUser.pseudo===User.pseudo){
+  response.json({"message":"pseudo déjà utilisé"})
+}
+if(newUser.email===User.email){
+  response.json({"message":"email déjà utilisé"})
+}
+if(!newUser){
+  console.log(error)
+}
+
+    
   
     if (newUser) {
 

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Suggestions from './Suggestions';
 
+
+
 class Search extends Component {
   state = {
     query: '',
@@ -9,11 +11,15 @@ class Search extends Component {
   }
 
   getInfo = () => {
-    axios.get(`https://api.themoviedb.org/3/search/movie?query=${this.state.query}&api_key=b79310e5c25643e20c05b842caaaee33&language=fr-FR&page=1`)
+    const  url = "http://api.themoviedb.org/3/search/movie?api_key=b79310e5c25643e20c05b842caaaee33&query="+`${this.state.query}`;
+    axios.get(url)
       .then(({ data }) => {
         this.setState({
-          results: data.data.results,
-        });
+          results: data.results,
+        } 
+        );
+        console.log("my fetch" +data)
+        console.log(result)
       });
   }
 
@@ -21,12 +27,16 @@ class Search extends Component {
     this.setState({
       query: this.search.value,
     }, () => {
-      if (this.state.query && this.state.query.length > 1) {
-        if (this.state.query.length % 2 === 0) {
-          this.getInfo();
+      try {
+        if (this.state.query && this.state.query.length > 1) {
+          
+            this.getInfo();
+          
+          console.log(this.state.query);
         }
-      }
-      else if (!this.state.query) {
+      
+      } catch (error) {
+        console.log(error)
       }
     });
   }
@@ -35,7 +45,7 @@ class Search extends Component {
     return (
       <div className="search">
 
-      <form>
+      <form className='search-films'>
         <input
           placeholder="Chercher un film..."
           className="search-input"

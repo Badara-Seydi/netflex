@@ -11,12 +11,12 @@ form{
     margin-top: 5%;
 }
 
-input{
+.signup-input{
     margin-top: 5%;
     width: 100%;
 }
 
-button{
+.signup-btn{
     width: 100%;
     border-radius: 10%;
     background-color: blue;

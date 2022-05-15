@@ -11,10 +11,7 @@ body {
 .header {
   height: 25vh;
 }
-.form{
-  height: 10vh;
-  width: 80%;
-}
+
 //Connect
 .connection{
   margin-top: 2%;
@@ -37,15 +34,7 @@ body {
   font-size: large;
   font-weight: bold;
 }
-.user_logo {
-  width: 5%;
-  height: 7vh;
-  margin-left: 65%;
-  background-color: white;
-  border-radius: 50%;
-  color: white;
 
-}
 #btn-connect{
   width: fit-content;
   align-items: center;
@@ -71,6 +60,15 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.search-films{
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
 ul {
   display: flex;
 }
