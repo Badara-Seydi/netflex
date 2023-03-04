@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {Link} from 'react';
 
 import Header from '../Header';
 
@@ -31,7 +32,7 @@ class OneMovie extends React.Component {
         <Header />
         <div className="movie-container">
           <h2 className="title"><span>{this.state.movie.title}</span></h2>
-          <p className="movie-category"><span>Catégorie :</span> {this.state.movie.title}</p>
+          <p className="movie-category"><span>Titre :</span> {this.state.movie.title}</p>
 
           <img className="movie-img" src={`https://image.tmdb.org/t/p/w185/${this.state.movie.poster_path}`} />
           <p className="movie-release"><span>Date de sortie :</span> {this.state.movie.release_date}</p>
